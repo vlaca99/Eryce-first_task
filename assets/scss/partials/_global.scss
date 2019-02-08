@@ -1,0 +1,160 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-family;
+}
+
+button {
+	font-family: $font-family;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1300px;
+	width: 100%;
+	padding: 0 15px;
+	margin: auto;
+}
+
+.bg-primary {
+	background: $primary-color;
+}
+
+.bg-blue {
+	background: $blue;
+}
+
+.bg-light-green {
+	background: $light-green;
+}
+
+.bg-purple {
+	background: $purple;
+}
+
+.btn-primary {
+	display: block;
+	@include button($white, $primary-color, 1px, $primary-color, 4px);
+	text-align: center;
+}
+
+.btn-facebook {
+	display: block;
+	@include button($white, $facebook-color, 1px, $facebook-color, 4px);
+	text-align: center;
+}
+
+.btn-twitter {
+	display: block;
+	@include button($white, $twitter-color, 1px, $twitter-color, 4px);
+	text-align: center;
+}
+
+.btn-dribble {
+	display: block;
+	@include button($white, $dribble-color, 1px, $dribble-color, 4px);
+	text-align: center;
+}
+
+.btn-outline {
+	display: block;
+	width: 100%;
+	@include button($grey, transparent, 1px, $grey, 4px);
+	text-align: center;
+}
+
+// Radio buttons
+.radio-container {
+	position: relative;
+	padding-left: 30px;
+	font-size: 13px;
+	color: $grey;
+	cursor: pointer;
+	.checkmark {
+		position: absolute;
+		top: -2px;
+		left: 0;
+		height: 18px;
+		width: 18px;
+		border: 1px solid $grey;
+		border-radius: 50%;
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+			top: 50%;
+			left: 50%;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $primary-color;
+			transform: translate(-50%, -50%);
+		}
+	}
+	input {
+		position: absolute;
+		height: 0;
+		width: 0;
+		opacity: 0;
+		cursor: pointer;
+		&:checked {
+			~ .checkmark {
+				&:after {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+// Checkboxes
+
+.checkbox-container {
+	position: relative;
+	padding-left: 30px;
+	font-size: 13px;
+	color: $grey;
+	cursor: pointer;
+	.checkmark {
+		position: absolute;
+		top: -2px;
+		left: 0;
+		height: 20px;
+		width: 20px;
+		border: 1px solid $light-grey;
+		border-radius: 4px;
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+			left: 50%;
+			top: 50%;
+			width: 5px;
+			height: 10px;
+			border: solid $primary-color;
+			border-width: 0 2px 2px 0;
+			transform: translate(-50%, -60%) rotate(45deg);
+		}
+	}
+	input {
+		position: absolute;
+		height: 0;
+		width: 0;
+		opacity: 0;
+		cursor: pointer;
+		&:checked {
+			~ .checkmark {
+				&:after {
+					display: block;
+				}
+			}
+		}
+	}
+}
